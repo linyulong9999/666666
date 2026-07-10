@@ -1,0 +1,7 @@
+conda activate lerobot
+
+lerobot-find-cameras opencv
+摄像头
+
+
+python -m lerobot.record --robot.type=so101_follower --robot.port=COM24 --robot.id=so101 --robot.max_relative_target=5 --robot.cameras="{front: {type: opencv, index_or_path: 1, width: 640, height: 480, fps: 30}, handeye: {type: opencv, index_or_path: 2, width: 640, height: 480, fps: 30}}" --policy.path="C:\Users\mechrevo\Desktop\training\pretrained_model" --dataset.repo_id=local/eval_demo2_act_20000_opt5_60s1 --dataset.single_task="same task as demo2" --dataset.num_episodes=1 --dataset.episode_time_s=60 --dataset.reset_time_s=10 --dataset.push_to_hub=false --display_data=false
